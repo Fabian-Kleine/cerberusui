@@ -2,14 +2,21 @@
   "name": "@fabiankleine/cerberusui",
   "version": "0.0.1",
   "description": "A UI Library for when you have to create a doomsday app",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {},
   "author": "Fabian Kleine",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/react": "^18.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rollup": "^4.17.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
