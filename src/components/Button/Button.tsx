@@ -1,7 +1,8 @@
 import { PropsWithChildren } from "react"
+import "./Button.css"
 
 const Button = (props: PropsWithChildren) => {
-    return <button style={{ backgroundColor: "red" }}>{props?.children}</button>
+    return <button className="btn">{props?.children}</button>
 }
 
 export default Button;
