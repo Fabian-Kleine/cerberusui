@@ -1,4 +1,26 @@
 .btn {
-    color: blue;
-    background-color: red;
+    color: black;
+    background-color: gray;
+}
+
+.btn-primary {
+    color: white;
+    background-color: aqua;
+}
+
+.btn-secondary {
+    color: white;
+    background-color: lime;
+}
+
+.btn:disabled {
+    background-color: darkgray;
+}
+
+.btn-primary:disabled {
+    background-color: darkcyan;
+}
+
+.btn-secondary:disabled {
+    background-color: darkolivegreen;
 }
