@@ -26,3 +26,7 @@ export const WithOnClick: Story = {
 export const Disabled: Story = {
     args: {variant: 'primary', children: 'Click Me', disabled: true}
 }
+
+export const ExtraClassNames: Story = {
+    args: {variant: 'primary', children: 'Click Me', className: "test"}
+}
