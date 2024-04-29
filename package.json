@@ -4,6 +4,10 @@
   "description": "A UI Library for when you have to create a doomsday app",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {},
   "author": "Fabian Kleine",
   "license": "MIT",
