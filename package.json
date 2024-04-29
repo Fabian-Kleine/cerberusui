@@ -1,0 +1,18 @@
+{
+  "name": "@fabiankleine/cerberusui",
+  "version": "0.0.1",
+  "description": "A UI Library for when you have to create a doomsday app",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Fabian Kleine",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  }
+}
