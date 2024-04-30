@@ -1,26 +1,96 @@
 .btn {
-    color: black;
-    background-color: gray;
+    color: #fff;
+    background-color: var(--default);
+    outline: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color .2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--default-hover);
 }
 
 .btn-primary {
-    color: white;
-    background-color: aqua;
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
 }
 
 .btn-secondary {
-    color: white;
-    background-color: lime;
+    background-color: var(--secondary);
 }
 
-.btn:disabled {
-    background-color: darkgray;
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
 }
 
-.btn-primary:disabled {
-    background-color: darkcyan;
+.btn-tertiary {
+    background-color: var(--tertiary);
 }
 
-.btn-secondary:disabled {
-    background-color: darkolivegreen;
+.btn-tertiary:hover {
+    background-color: var(--tertiary-hover);
 }
+
+.btn-warning {
+    background-color: var(--warning);
+}
+
+.btn-warning:hover {
+    background-color: var(--warning-hover);
+}
+
+.btn:disabled, .btn-disabled {
+    background-color: var(--default-disabled);
+    cursor: not-allowed;
+}
+
+.btn-primary:disabled, .btn-primary.btn-disabled {
+    background-color: var(--primary-disabled);
+}
+
+.btn-secondary:disabled, .btn-secondary.btn-disabled {
+    background-color: var(--secondary-disabled);
+}
+
+.btn-tertiary:disabled, .btn-tertiary.btn-disabled {
+    background-color: var(--tertiary-disabled);
+}
+
+.btn-warning:disabled, .btn-warning.btn-disabled {
+    background-color: var(--warning-disabled);
+}
+
+.btn-loading {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #050100 10px,
+      #050100 20px
+    );
+    background-repeat: repeat;
+    background-size: 5760px 100%;
+    animation: btn-loading-animation infinite 180s linear;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .btn-loading {
+        animation: none;
+    }
+}
+
+@keyframes btn-loading-animation {
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
