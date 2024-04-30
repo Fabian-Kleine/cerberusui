@@ -15,7 +15,11 @@ function Slot({ children, ...props }
     }) {
 
     if (isValidElement(children)) {
-        return cloneElement(children, props)
+        return cloneElement(children, {
+            ...props,
+            ...children.props,
+            className: `${props.className || ''} ${children.props.className || ''}`.trim(),
+        })
     }
 
     if (Children.count(children) > 1) {

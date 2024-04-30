@@ -36,7 +36,7 @@ export const Disabled: Story = {
 }
 
 export const AsChild: Story = {
-    args: {variant: 'primary', children: <a href="https://fabian-kleine.dev/" target="_blank">Test Link</a>, asChild: true, disabled: false}
+    args: {variant: 'primary', children: <a className="test" href="https://fabian-kleine.dev/" target="_blank">Test Link</a>, asChild: true}
 }
 
 export const ExtraClassNames: Story = {
