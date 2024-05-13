@@ -15,11 +15,7 @@
     opacity: 1;
     pointer-events: inherit;
     transition: opacity .3s, transform .3s;
-    transform: scale(100%) translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: 0;
+    transform: scale(100%);
     user-select: none;
     -webkit-user-drag: none;
 }
