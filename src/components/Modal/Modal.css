@@ -1,0 +1,252 @@
+.modal {
+    background-color: var(--base);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    outline: var(--default) 3px solid;
+    outline-offset: 1px;
+    border: none;
+    max-width: 500px;
+    padding: 1rem;
+    overflow: hidden;
+    opacity: 1;
+    pointer-events: inherit;
+    transition: opacity .3s, transform .3s;
+    transform: scale(100%);
+    position: relative;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.modal:has(.modal-draggable) {
+    padding-top: 1.5rem;
+}
+
+.modal:has(.modal-draggable):hover {
+    transition: opacity .3s;
+}
+
+.modal-draggable {
+    background-color: #ffffff3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    cursor: move;
+}
+
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.modal-image * {
+    max-width: 150px;
+}
+
+.closed {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(20%);
+}
+
+.modal-primary {
+    background-color: var(--primary-bg);
+    color: var(--primary);
+    outline-color: var(--primary);
+}
+
+.modal-primary .modal-draggable {
+    background-color: var(--primary-disabled);
+}
+
+.modal-secondary {
+    background-color: var(--secondary-bg);
+    color: var(--secondary);
+    outline-color: var(--secondary);
+}
+
+.modal-secondary .modal-draggable {
+    background-color: var(--secondary-disabled);
+}
+
+.modal-tertiary {
+    background-color: var(--tertiary-bg);
+    color: var(--tertiary);
+    outline-color: var(--tertiary);
+}
+
+.modal-tertiary .modal-draggable {
+    background-color: var(--tertiary-disabled);
+}
+
+.modal-warning {
+    background-color: var(--warning-bg);
+    color: var(--warning);
+    outline-color: var(--warning);
+}
+
+.modal-warning .modal-draggable {
+    background-color: #0501006b;
+}
+
+.modal-danger {
+    position: relative;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+.modal-danger::before {
+    content: '';
+    width: 100%;
+    height: 50px;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #050100 10px,
+      #050100 20px
+    );
+    background-repeat: repeat;
+    background-size: 5760px 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: modal-danger-before infinite 180s linear;
+    border-bottom: #050100 solid 4px;
+}
+
+.modal-danger::after {
+    content: '';
+    width: 100%;
+    height: 50px;
+    background-image: repeating-linear-gradient(
+      315deg,
+      transparent,
+      transparent 10px,
+      #050100 10px,
+      #050100 20px
+    );
+    background-repeat: repeat;
+    background-size: 5760px 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: modal-danger-after infinite 180s linear;
+    border-top: #050100 solid 4px;
+}
+
+.modal-default.modal-danger::before {
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        var(--warning-bg) 10px,
+        var(--warning-bg) 20px
+      );
+      border-bottom: var(--warning-bg) solid 4px;
+}
+
+.modal-default.modal-danger::after {
+    background-image: repeating-linear-gradient(
+        315deg,
+        transparent,
+        transparent 10px,
+        var(--warning-bg) 10px,
+        var(--warning-bg) 20px
+    );
+    border-top: var(--warning-bg) solid 4px;
+}
+
+@keyframes modal-danger-before {
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes modal-danger-after {
+    100% {
+        background-position: -100% -100%;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+}
+
+.modal-header.modal-header-end {
+    justify-content: end;
+}
+
+.modal-close {
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent 5px solid;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS14Ij48cGF0aCBkPSJNMTggNiA2IDE4Ii8+PHBhdGggZD0ibTYgNiAxMiAxMiIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modal-close:hover {
+    background-color: var(--default-hover);
+    border-color: var(--default-hover);
+    transition: all .2s ease-in-out;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    letter-spacing: .05rem;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.modal-body {
+    padding: 1rem 0;
+}
+
+.modal-body * {
+    margin: 0;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+    margin-top: 5px;
+    max-width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+    .modal {
+        max-width: 80vw;
+    }
+
+    .modal-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .modal-actions {
+        justify-content: center;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+}
