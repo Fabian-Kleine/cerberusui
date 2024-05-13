@@ -15,18 +15,18 @@
     opacity: 1;
     pointer-events: inherit;
     transition: opacity .3s, transform .3s;
-    transform: scale(100%);
-    position: relative;
+    transform: scale(100%), translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
     user-select: none;
     -webkit-user-drag: none;
 }
 
 .modal:has(.modal-draggable) {
-    padding-top: 1.5rem;
-}
-
-.modal:has(.modal-draggable):hover {
     transition: opacity .3s;
+    padding-top: 1.5rem;
 }
 
 .modal-draggable {
