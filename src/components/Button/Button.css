@@ -1,6 +1,6 @@
 .btn {
-    color: #fff;
-    background-color: var(--default);
+    color: var(--default);
+    background-color: var(--base);
     outline: none;
     padding: 12px 24px;
     font-size: 1em;
@@ -9,43 +9,62 @@
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
+    border: var(--default) 3px solid;
 }
 
 .btn:hover {
-    background-color: var(--default-hover);
+    border-color: var(--default-hover);
+    background-color: var(--default);
+    color: #fff;
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--primary-bg);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    background-color: var(--primary);
+    color: #fff;
 }
 
 .btn-secondary {
-    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background-color: var(--secondary-bg);
 }
 
 .btn-secondary:hover {
-    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+    background-color: var(--secondary);
+    color: #fff;
 }
 
 .btn-tertiary {
-    background-color: var(--tertiary);
+    border-color: var(--tertiary);
+    color: var(--tertiary);
+    background-color: var(--tertiary-bg);
 }
 
 .btn-tertiary:hover {
-    background-color: var(--tertiary-hover);
+    border-color: var(--tertiary-hover);
+    background-color: var(--tertiary);
+    color: #fff;
 }
 
 .btn-warning {
-    background-color: var(--warning);
+    border-color: var(--warning);
+    color: var(--warning);
+    background-color: var(--warning-bg);
 }
 
 .btn-warning:hover {
-    background-color: var(--warning-hover);
+    border-color: var(--warning-hover);
+    background-color: var(--warning);
+    color: #fff;
 }
 
 .btn:disabled, .btn-disabled {
@@ -55,18 +74,22 @@
 
 .btn-primary:disabled, .btn-primary.btn-disabled {
     background-color: var(--primary-disabled);
+    color: var(--primary);
 }
 
 .btn-secondary:disabled, .btn-secondary.btn-disabled {
     background-color: var(--secondary-disabled);
+    color: var(--secondary);
 }
 
 .btn-tertiary:disabled, .btn-tertiary.btn-disabled {
     background-color: var(--tertiary-disabled);
+    color: var(--tertiary);
 }
 
 .btn-warning:disabled, .btn-warning.btn-disabled {
     background-color: var(--warning-disabled);
+    color: var(--warning);
 }
 
 .btn-loading {
@@ -80,6 +103,7 @@
     background-repeat: repeat;
     background-size: 5760px 100%;
     animation: btn-loading-animation infinite 180s linear;
+    color: #fff !important;
 }
 
 @media (prefers-reduced-motion: reduce){
