@@ -103,7 +103,7 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
     if (type == "image") {
         console.error("Use Input type file for images!");
         return (
-            <div style={{ color: "var(--secondary)" }}>Use Input type "file" for images!</div>
+            <div style={{ color: "var(--cui-secondary)" }}>Use Input type "file" for images!</div>
         )
     }
     if (type == "OTP") {
