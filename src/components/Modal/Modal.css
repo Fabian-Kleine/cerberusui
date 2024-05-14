@@ -29,7 +29,6 @@
 
 .cui-modal-draggable {
     background-color: #ffffff3d;
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,7 +94,6 @@
 }
 
 .cui-modal-danger {
-    position: relative;
     padding-top: 60px !important;
     padding-bottom: 60px !important;
 }
