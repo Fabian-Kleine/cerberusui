@@ -18,6 +18,8 @@
     transform: scale(100%);
     user-select: none;
     -webkit-user-drag: none;
+    position: fixed;
+    top: 50vh;
 }
 
 .cui-modal:has(.cui-modal-draggable) {
