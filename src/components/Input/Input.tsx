@@ -27,9 +27,7 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
     function handleFileChange(event: any) {
         const val = event?.target.files[0].name;
         setInputValue(val);
-        if (props.onChange) {
-            props.onChange(event);
-        }
+        if (props.onChange) props.onChange(event);
     }
 
 
