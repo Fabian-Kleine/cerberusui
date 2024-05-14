@@ -28,6 +28,7 @@
 }
 
 .cui-modal-draggable {
+    position: relative;
     background-color: #ffffff3d;
     top: 0;
     left: 0;
