@@ -34,10 +34,10 @@ const Button = ({ variant, asChild, loading, ...props }: ButtonProps) => {
         props.disabled = true;
     }
     if (asChild) {
-        props.className = classNames("btn", variant == "primary" ? "btn-primary" : variant == "secondary" ? "btn-secondary" : variant == "tertiary" ? "btn-tertiary" : variant == "warning" ? "btn-warning" : null, props?.className, props?.disabled && "btn-disabled", loading && "btn-loading");
+        props.className = classNames("cui-btn", `cui-btn-${variant}`, props?.className, props?.disabled && "cui-btn-disabled", loading && "cui-btn-loading");
         return <Slot {...props} />
     }
-    return <button {...props} className={classNames("btn", variant == "primary" ? "btn-primary" : variant == "secondary" ? "btn-secondary" : variant == "tertiary" ? "btn-tertiary" : variant == "warning" ? "btn-warning" : null, props?.className, loading && "btn-loading")}>{props?.children}</button>
+    return <button {...props} className={classNames("cui-btn", `cui-btn-${variant}`, props?.className, loading && "cui-btn-loading")}>{props?.children}</button>
 }
 
 export default Button;

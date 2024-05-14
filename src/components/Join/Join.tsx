@@ -4,7 +4,7 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 const Join = ({ className, children, ...props }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => {
     return (
-        <div {...props} className={classNames("join", className)}>
+        <div {...props} className={classNames("cui-join", className)}>
             {children}
         </div>
     )

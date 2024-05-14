@@ -1,12 +1,12 @@
-.modal {
-    background-color: var(--base);
+.cui-modal {
+    background-color: var(--cui-base);
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    outline: var(--default) 3px solid;
+    outline: var(--cui-default) 3px solid;
     outline-offset: 1px;
     border: none;
     max-width: 500px;
@@ -20,12 +20,12 @@
     -webkit-user-drag: none;
 }
 
-.modal:has(.modal-draggable) {
+.cui-modal:has(.cui-modal-draggable) {
     transition: opacity .3s;
     padding-top: 1.5rem;
 }
 
-.modal-draggable {
+.cui-modal-draggable {
     background-color: #ffffff3d;
     position: absolute;
     top: 0;
@@ -35,70 +35,70 @@
     cursor: move;
 }
 
-.modal-container {
+.cui-modal-container {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
 }
 
-.modal-image * {
+.cui-modal-image * {
     max-width: 150px;
 }
 
-.closed {
+.cui-closed {
     opacity: 0;
     pointer-events: none;
     transform: scale(20%);
 }
 
-.modal-primary {
-    background-color: var(--primary-bg);
-    color: var(--primary);
-    outline-color: var(--primary);
+.cui-modal-primary {
+    background-color: var(--cui-primary-bg);
+    color: var(--cui-primary);
+    outline-color: var(--cui-primary);
 }
 
-.modal-primary .modal-draggable {
-    background-color: var(--primary-disabled);
+.cui-modal-primary .cui-modal-draggable {
+    background-color: var(--cui-primary-disabled);
 }
 
-.modal-secondary {
-    background-color: var(--secondary-bg);
-    color: var(--secondary);
-    outline-color: var(--secondary);
+.cui-modal-secondary {
+    background-color: var(--cui-secondary-bg);
+    color: var(--cui-secondary);
+    outline-color: var(--cui-secondary);
 }
 
-.modal-secondary .modal-draggable {
-    background-color: var(--secondary-disabled);
+.cui-modal-secondary .cui-modal-draggable {
+    background-color: var(--cui-secondary-disabled);
 }
 
-.modal-tertiary {
-    background-color: var(--tertiary-bg);
-    color: var(--tertiary);
-    outline-color: var(--tertiary);
+.cui-modal-tertiary {
+    background-color: var(--cui-tertiary-bg);
+    color: var(--cui-tertiary);
+    outline-color: var(--cui-tertiary);
 }
 
-.modal-tertiary .modal-draggable {
-    background-color: var(--tertiary-disabled);
+.cui-modal-tertiary .cui-modal-draggable {
+    background-color: var(--cui-tertiary-disabled);
 }
 
-.modal-warning {
-    background-color: var(--warning-bg);
-    color: var(--warning);
-    outline-color: var(--warning);
+.cui-modal-warning {
+    background-color: var(--cui-warning-bg);
+    color: var(--cui-warning);
+    outline-color: var(--cui-warning);
 }
 
-.modal-warning .modal-draggable {
+.cui-modal-warning .cui-modal-draggable {
     background-color: #0501006b;
 }
 
-.modal-danger {
+.cui-modal-danger {
     position: relative;
     padding-top: 60px !important;
     padding-bottom: 60px !important;
 }
 
-.modal-danger::before {
+.cui-modal-danger::before {
     content: '';
     width: 100%;
     height: 50px;
@@ -114,11 +114,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: modal-danger-before infinite 180s linear;
+    animation: cui-modal-danger-before infinite 180s linear;
     border-bottom: #050100 solid 4px;
 }
 
-.modal-danger::after {
+.cui-modal-danger::after {
     content: '';
     width: 100%;
     height: 50px;
@@ -134,56 +134,56 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    animation: modal-danger-after infinite 180s linear;
+    animation: cui-modal-danger-after infinite 180s linear;
     border-top: #050100 solid 4px;
 }
 
-.modal-default.modal-danger::before {
+.cui-modal-default.cui-modal-danger::before {
     background-image: repeating-linear-gradient(
         45deg,
         transparent,
         transparent 10px,
-        var(--warning-bg) 10px,
-        var(--warning-bg) 20px
+        var(--cui-warning-bg) 10px,
+        var(--cui-warning-bg) 20px
       );
-      border-bottom: var(--warning-bg) solid 4px;
+      border-bottom: var(--cui-warning-bg) solid 4px;
 }
 
-.modal-default.modal-danger::after {
+.cui-modal-default.cui-modal-danger::after {
     background-image: repeating-linear-gradient(
         315deg,
         transparent,
         transparent 10px,
-        var(--warning-bg) 10px,
-        var(--warning-bg) 20px
+        var(--cui-warning-bg) 10px,
+        var(--cui-warning-bg) 20px
     );
-    border-top: var(--warning-bg) solid 4px;
+    border-top: var(--cui-warning-bg) solid 4px;
 }
 
-@keyframes modal-danger-before {
+@keyframes cui-modal-danger-before {
     100% {
         background-position: 100% 100%;
     }
 }
 
-@keyframes modal-danger-after {
+@keyframes cui-modal-danger-after {
     100% {
         background-position: -100% -100%;
     }
 }
 
-.modal-header {
+.cui-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: start;
     width: 100%;
 }
 
-.modal-header.modal-header-end {
+.cui-modal-header.modal-header-end {
     justify-content: end;
 }
 
-.modal-close {
+.cui-modal-close {
     cursor: pointer;
     background-color: transparent;
     border: transparent 5px solid;
@@ -196,28 +196,28 @@
     background-position: center;
 }
 
-.modal-close:hover {
-    background-color: var(--default-hover);
-    border-color: var(--default-hover);
+.cui-modal-close:hover {
+    background-color: var(--cui-default-hover);
+    border-color: var(--cui-default-hover);
     transition: all .2s ease-in-out;
 }
 
-.modal-title {
+.cui-modal-title {
     font-size: 1.2rem;
     letter-spacing: .05rem;
     margin: 0;
     margin-top: 1rem;
 }
 
-.modal-body {
+.cui-modal-body {
     padding: 1rem 0;
 }
 
-.modal-body * {
+.cui-modal-body * {
     margin: 0;
 }
 
-.modal-actions {
+.cui-modal-actions {
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
@@ -228,21 +228,21 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .modal {
+    .cui-modal {
         max-width: 80vw;
     }
 
-    .modal-image {
+    .cui-modal-image {
         display: none;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .modal-actions {
+    .cui-modal-actions {
         justify-content: center;
     }
 
-    .modal-actions button {
+    .cui-modal-actions button {
         width: 100%;
     }
 }

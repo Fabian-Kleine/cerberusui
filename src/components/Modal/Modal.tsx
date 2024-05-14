@@ -18,7 +18,7 @@ export interface ModalProps extends DialogHTMLAttributes<HTMLDialogElement> {
 
 const Drag = ({modalDraggable, children}: {modalDraggable?: Boolean, children: ReactNode}) => {
     if (modalDraggable) {
-        return <Draggable handle=".modal-draggable">{children}</Draggable>
+        return <Draggable handle=".cui-modal-draggable">{children}</Draggable>
     }
     return <>{children}</>
 }
@@ -29,27 +29,27 @@ const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions,
             <dialog
                 {...props}
                 open={open}
-                className={classNames("modal", `modal-${variant}`, danger && "modal-danger", !open && "closed", className)}>
+                className={classNames("cui-modal", `cui-modal-${variant}`, danger && "cui-modal-danger", !open && "cui-closed", className)}>
                 {modalDraggable &&
-                    <div className="modal-draggable"></div>
+                    <div className="cui-modal-draggable"></div>
                 }
                 {modalImage &&
-                    <div className="modal-image">
+                    <div className="cui-modal-image">
                         {modalImage}
                     </div>
                 }
-                <div className="modal-container">
-                    <div className={classNames("modal-header", !modalTitle && "modal-header-end")}>
+                <div className="cui-modal-container">
+                    <div className={classNames("cui-modal-header", !modalTitle && "cui-modal-header-end")}>
                         {modalTitle && (
-                            <h3 className="modal-title">{modalTitle}</h3>
+                            <h3 className="cui-modal-title">{modalTitle}</h3>
                         )}
-                        <button onClick={() => setOpen(false)} className={"modal-close"} type="button"></button>
+                        <button onClick={() => setOpen(false)} className={"cui-modal-close"} type="button"></button>
                     </div>
-                    <div className="modal-body">
+                    <div className="cui-modal-body">
                         {children}
                     </div>
                     {modalActions && (
-                        <div className="modal-actions">
+                        <div className="cui-modal-actions">
                             {modalActions.map((action, index) =>
                                 <Button onClick={() => action.action()} key={index} variant={action.actionVariant}>{action.actionTitle}</Button>
                             )}

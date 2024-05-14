@@ -51,25 +51,25 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
 
     if (type == "file") {
         return (
-            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+            <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, className)}>
                 {children &&
-                    <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
+                    <label htmlFor={id} className={classNames("cui-label", labelClassName)}>{children}</label>
                 }
                 <Join>
-                    <Button onClick={handleClick} className="input-btn" variant={variant}>Select File</Button>
-                    <input value={inputValue} disabled placeholder={props.placeholder || "No file selected"} type="text" className={classNames("input", `input-${variant}`, className)} />
+                    <Button onClick={handleClick} className="cui-input-btn" variant={variant}>Select File</Button>
+                    <input value={inputValue} disabled placeholder={props.placeholder || "No file selected"} type="text" className={classNames("cui-input", `cui-input-${variant}`, className)} />
                 </Join>
-                <input {...props} onChange={handleFileChange} type={type} id={id} name={name} className="file-input" />
+                <input {...props} onChange={handleFileChange} type={type} id={id} name={name} className="cui-file-input" />
             </div>
         )
     }
     if (type == "checkbox" || type == "radio") {
         return (
-            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, "input-wrapper-row", className)}>
+            <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, "cui-input-wrapper-row", className)}>
                 {children &&
                     <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
                 }
-                <input {...props} type={type} id={id} name={name} className={classNames("input", `input-${variant}`, "input-checkbox", className)} />
+                <input {...props} type={type} id={id} name={name} className={classNames("cui-input", `cui-input-${variant}`, "cui-input-checkbox", className)} />
             </div>
         )
     }
@@ -82,21 +82,21 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
     }
     if (type == "color") {
         return (
-            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+            <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, className)}>
                 {children &&
-                    <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
+                    <label htmlFor={id} className={classNames("cui-label", labelClassName)}>{children}</label>
                 }
-                <input type={type} id={id} name={name} className={classNames("input", `input-${variant}`, "input-color", className)} {...props} />
+                <input type={type} id={id} name={name} className={classNames("cui-input", `cui-input-${variant}`, "cui-input-color", className)} {...props} />
             </div>
         )
     }
     if (type == "range") {
         return (
-            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+            <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, className)}>
                 {children &&
-                    <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
+                    <label htmlFor={id} className={classNames("cui-label", labelClassName)}>{children}</label>
                 }
-                <input type={type} id={id} name={name} className={classNames("input", `input-${variant}`, "input-range", className)} {...props} />
+                <input type={type} id={id} name={name} className={classNames("cui-input", `cui-input-${variant}`, "cui-input-range", className)} {...props} />
             </div>
         )
     }
@@ -108,11 +108,11 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
     }
     if (type == "OTP") {
         return (
-            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+            <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, className)}>
                 {children &&
                     <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
                 }
-                <div className="input-wrapper input-wrapper-otp">
+                <div className="cui-input-wrapper cui-input-wrapper-otp">
                     {Array.from({ length: OTPLength || 3 }).map((_, index) =>
                         <input
                             key={index}
@@ -125,7 +125,7 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
                             }}
                             ref={(ref) => (otpRef.current[index] = ref as HTMLInputElement)}
                             type="text"
-                            className={classNames("input", `input-${variant}`, "input-otp", className)}
+                            className={classNames("cui-input", `cui-input-${variant}`, "cui-input-otp", className)}
                             {...props} />
                     )}
                 </div>
@@ -133,11 +133,11 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
         )
     }
     return (
-        <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+        <div className={classNames("cui-input-wrapper", `cui-input-wrapper-${variant}`, className)}>
             {children &&
-                <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
+                <label htmlFor={id} className={classNames("cui-label", labelClassName)}>{children}</label>
             }
-            <input type={type} id={id} name={name} className={classNames("input", `input-${variant}`, className)} {...props} />
+            <input type={type} id={id} name={name} className={classNames("cui-input", `cui-input-${variant}`, className)} {...props} />
         </div>
     )
 }

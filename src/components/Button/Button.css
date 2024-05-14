@@ -1,5 +1,5 @@
-.btn {
-    color: var(--default);
+.cui-btn {
+    color: var(--cui-default);
     background-color: var(--base);
     outline: none;
     padding: 12px 24px;
@@ -10,89 +10,89 @@
     cursor: pointer;
     text-decoration: none;
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
-    border: var(--default) 3px solid;
+    border: var(--cui-default) 3px solid;
 }
 
-.btn:hover {
-    border-color: var(--default-hover);
-    background-color: var(--default);
+.cui-btn:hover {
+    border-color: var(--cui-default-hover);
+    background-color: var(--cui-default);
     color: #fff;
 }
 
-.btn-primary {
-    border-color: var(--primary);
-    color: var(--primary);
-    background-color: var(--primary-bg);
+.cui-btn-primary {
+    border-color: var(--cui-primary);
+    color: var(--cui-primary);
+    background-color: var(--cui-primary-bg);
 }
 
-.btn-primary:hover {
-    border-color: var(--primary-hover);
-    background-color: var(--primary);
+.cui-btn-primary:hover {
+    border-color: var(--cui-primary-hover);
+    background-color: var(--cui-primary);
     color: #fff;
 }
 
-.btn-secondary {
-    border-color: var(--secondary);
-    color: var(--secondary);
-    background-color: var(--secondary-bg);
+.cui-btn-secondary {
+    border-color: var(--cui-secondary);
+    color: var(--cui-secondary);
+    background-color: var(--cui-secondary-bg);
 }
 
-.btn-secondary:hover {
-    border-color: var(--secondary-hover);
-    background-color: var(--secondary);
+.cui-btn-secondary:hover {
+    border-color: var(--cui-secondary-hover);
+    background-color: var(--cui-secondary);
     color: #fff;
 }
 
-.btn-tertiary {
-    border-color: var(--tertiary);
-    color: var(--tertiary);
-    background-color: var(--tertiary-bg);
+.cui-btn-tertiary {
+    border-color: var(--cui-tertiary);
+    color: var(--cui-tertiary);
+    background-color: var(--cui-tertiary-bg);
 }
 
-.btn-tertiary:hover {
-    border-color: var(--tertiary-hover);
-    background-color: var(--tertiary);
+.cui-btn-tertiary:hover {
+    border-color: var(--cui-tertiary-hover);
+    background-color: var(--cui-tertiary);
     color: #fff;
 }
 
-.btn-warning {
-    border-color: var(--warning);
-    color: var(--warning);
-    background-color: var(--warning-bg);
+.cui-btn-warning {
+    border-color: var(--cui-warning);
+    color: var(--cui-warning);
+    background-color: var(--cui-warning-bg);
 }
 
-.btn-warning:hover {
-    border-color: var(--warning-hover);
-    background-color: var(--warning);
+.cui-btn-warning:hover {
+    border-color: var(--cui-warning-hover);
+    background-color: var(--cui-warning);
     color: #fff;
 }
 
-.btn:disabled, .btn-disabled {
-    background-color: var(--default-disabled);
+.cui-btn:disabled, .cui-btn-disabled {
+    background-color: var(--cui-default-disabled);
     cursor: not-allowed;
 }
 
-.btn-primary:disabled, .btn-primary.btn-disabled {
-    background-color: var(--primary-disabled);
-    color: var(--primary);
+.cui-btn-primary:disabled, .cui-btn-primary.cui-btn-disabled {
+    background-color: var(--cui-primary-disabled);
+    color: var(--cui-primary);
 }
 
-.btn-secondary:disabled, .btn-secondary.btn-disabled {
-    background-color: var(--secondary-disabled);
-    color: var(--secondary);
+.cui-btn-secondary:disabled, .cui-btn-secondary.cui-btn-disabled {
+    background-color: var(--cui-secondary-disabled);
+    color: var(--cui-secondary);
 }
 
-.btn-tertiary:disabled, .btn-tertiary.btn-disabled {
-    background-color: var(--tertiary-disabled);
-    color: var(--tertiary);
+.cui-btn-tertiary:disabled, .cui-btn-tertiary.cui-btn-disabled {
+    background-color: var(--cui-tertiary-disabled);
+    color: var(--cui-tertiary);
 }
 
-.btn-warning:disabled, .btn-warning.btn-disabled {
-    background-color: var(--warning-disabled);
-    color: var(--warning);
+.cui-btn-warning:disabled, .cui-btn-warning.cui-btn-disabled {
+    background-color: var(--cui-warning-disabled);
+    color: var(--cui-warning);
 }
 
-.btn-loading {
+.cui-btn-loading {
     background-image: repeating-linear-gradient(
       45deg,
       transparent,
@@ -102,17 +102,17 @@
     );
     background-repeat: repeat;
     background-size: 5760px 100%;
-    animation: btn-loading-animation infinite 180s linear;
+    animation: cui-btn-loading-animation infinite 180s linear;
     color: #fff !important;
 }
 
 @media (prefers-reduced-motion: reduce){
-    .btn-loading {
+    .cui-btn-loading {
         animation: none;
     }
 }
 
-@keyframes btn-loading-animation {
+@keyframes cui-btn-loading-animation {
     100% {
         background-position: 100% 100%;
     }

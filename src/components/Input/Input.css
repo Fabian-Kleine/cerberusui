@@ -1,41 +1,41 @@
-.input-wrapper {
+.cui-input-wrapper {
     display: flex;
     justify-content: center;
     align-items: start;
     flex-direction: column;
     gap: 2px;
-    color: var(--default);
+    color: var(--cui-default);
     box-sizing: border-box;
 }
 
-.input-wrapper-primary {
-    color: var(--primary);
+.cui-input-wrapper-primary {
+    color: var(--cui-primary);
 }
 
-.input-wrapper-secondary {
-    color: var(--secondary);
+.cui-input-wrapper-secondary {
+    color: var(--cui-secondary);
 }
 
-.input-wrapper-tertiary {
-    color: var(--tertiary);
+.cui-input-wrapper-tertiary {
+    color: var(--cui-tertiary);
 }
 
-.input-wrapper-warning {
-    color: var(--warning);
+.cui-input-wrapper-warning {
+    color: var(--cui-warning);
 }
 
-.input-wrapper-row {
+.cui-input-wrapper-row {
     flex-direction: row-reverse;
     align-items: center;
 }
 
-.input-wrapper-otp {
+.cui-input-wrapper-otp {
     flex-direction: row;
     align-items: center;
     gap: 5px;
 }
 
-.input {
+.cui-input {
     padding-left: 1rem;
     padding-right: 1rem;
     height: 3rem;
@@ -44,8 +44,8 @@
     font-weight: bold;
     line-height: 1.5rem;
     border-radius: 5px;
-    border: var(--default) 3px solid;
-    background-color: var(--base);
+    border: var(--cui-default) 3px solid;
+    background-color: var(--cui-base);
     color: #fff;
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
     outline-offset: 1px;
@@ -54,143 +54,147 @@
     text-overflow: ellipsis;
 }
 
-.file-input {
+.cui-file-input {
     opacity: 0;
     visibility: hidden;
 }
 
-.input-primary {
-    background-color: var(--primary-bg);
-    color: var(--primary);
-    border-color: var(--primary);
+.cui-input-primary {
+    background-color: var(--cui-primary-bg);
+    color: var(--cui-primary);
+    border-color: var(--cui-primary);
 }
 
-.input-secondary {
-    background-color: var(--secondary-bg);
-    color: var(--secondary);
-    border-color: var(--secondary);
+.cui-input-secondary {
+    background-color: var(--cui-secondary-bg);
+    color: var(--cui-secondary);
+    border-color: var(--cui-secondary);
 }
 
-.input-tertiary {
-    background-color: var(--tertiary-bg);
-    color: var(--tertiary);
-    border-color: var(--tertiary);
+.cui-input-tertiary {
+    background-color: var(--cui-tertiary-bg);
+    color: var(--cui-tertiary);
+    border-color: var(--cui-tertiary);
 }
 
-.input-warning {
-    background-color: var(--warning-bg);
-    color: var(--warning);
-    border-color: var(--warning);
+.cui-input-warning {
+    background-color: var(--cui-warning-bg);
+    color: var(--cui-warning);
+    border-color: var(--cui-warning);
 }
 
-.input:focus {
-    outline: 2px solid var(--default);
+.cui-input:focus {
+    outline: 2px solid var(--cui-default);
 }
 
-.input-primary:focus {
-    outline-color: var(--primary);
+.cui-input-primary:focus {
+    outline-color: var(--cui-primary);
 }
 
-.input-secondary:focus {
-    outline-color: var(--secondary);
+.cui-input-secondary:focus {
+    outline-color: var(--cui-secondary);
 }
 
-.input-tertiary:focus {
-    outline-color: var(--tertiary);
+.cui-input-tertiary:focus {
+    outline-color: var(--cui-tertiary);
 }
 
-.input-warning:focus {
-    outline-color: var(--warning);
+.cui-input-warning:focus {
+    outline-color: var(--cui-warning);
 }
 
-.input::placeholder {
-    color: var(--default-disabled);
+.cui-input::placeholder {
+    color: var(--cui-default-disabled);
 }
 
-.input-primary::placeholder {
-    color: var(--primary-disabled);
+.cui-input-primary::placeholder {
+    color: var(--cui-primary-disabled);
 }
 
-.input-secondary::placeholder {
-    color: var(--secondary-hover);
+.cui-input-secondary::placeholder {
+    color: var(--cui-secondary-hover);
 }
 
-.input-tertiary::placeholder {
-    color: var(--tertiary-disabled);
+.cui-input-tertiary::placeholder {
+    color: var(--cui-tertiary-disabled);
 }
 
-.input-warning::placeholder {
-    color: var(--warning-disabled);
+.cui-input-warning::placeholder {
+    color: var(--cui-warning-disabled);
 }
 
-.input:disabled {
-    color: var(--default-disabled);
+.cui-input:disabled {
+    color: var(--cui-default-disabled);
 }
 
-.input-primary:disabled {
-    color: var(--primary-disabled);
+.cui-input-primary:disabled {
+    color: var(--cui-primary-disabled);
 }
 
-.input-secondary:disabled {
-    color: var(--secondary-disabled);
+.cui-input-secondary:disabled {
+    color: var(--cui-secondary-disabled);
 }
 
-.input-tertiary:disabled {
-    color: var(--tertiary-disabled);
+.cui-input-tertiary:disabled {
+    color: var(--cui-tertiary-disabled);
 }
 
-.input-warning:disabled {
-    color: var(--warning-disabled);
+.cui-input-warning:disabled {
+    color: var(--cui-warning-disabled);
 }
 
-.label {
+.cui-label {
     padding-left: .25rem;
     font-size: 1.25rem;
 }
 
-.input-btn {
+.cui-input-btn {
     padding: 0 1rem !important;
     height: 3rem;
     min-width: 8rem;
 }
 
-.input-checkbox {
+.cui-input-checkbox {
     width: 2rem;
     height: 2rem;
     accent-color: var(--base);
 }
 
-.input-range {
+.cui-input-range {
     accent-color: var(--base);
 }
 
-.input-range:focus {
+.cui-input-range:focus {
     outline: none;
 }
 
-.input-primary.input-checkbox, .input-primary.input-range {
-    accent-color: var(--primary);
+.cui-input-primary.cui-input-checkbox,
+.cui-input-primary.cui-input-range {
+    accent-color: var(--cui-primary);
 }
 
-.input-secondary.input-checkbox, .input-secondary.input-range {
-    accent-color: var(--secondary);
+.cui-input-secondary.cui-input-checkbox,
+.cui-input-secondary.cui-input-range {
+    accent-color: var(--cui-secondary);
 }
 
-.input-tertiary.input-checkbox, .input-tertiary.input-range {
-    accent-color: var(--tertiary-disabled);
+.cui-input-tertiary.cui-input-checkbox,
+.cui-input-tertiary.cui-input-range {
+    accent-color: var(--cui-tertiary-disabled);
 }
 
-.input-warning.input-checkbox, .input-warning.input-range {
-    accent-color: var(--warning-bg);
+.cui-input-warning.cui-input-checkbox,
+.cui-input-warning.cui-input-range {
+    accent-color: var(--cui-warning-bg);
 }
 
-.input-color {
+.cui-input-color {
     padding: 0;
     border-width: 5px;
     border-radius: 2px;
 }
 
-.input-otp {
+.cui-input-otp {
     text-align: center;
     width: 2rem;
     padding: .5rem .25rem;
