@@ -24,7 +24,7 @@ export const InputWithLabel: Story = {
         children: "Input Label",
         variant: "primary",
         placeholder: "Type Something",
-        id: "input"
+        id: "input",
     }
 }
 
@@ -83,5 +83,16 @@ export const RangeInput: Story = {
         variant: "primary",
         type: "range",
         id: "input",
+    }
+}
+
+export const OTPInput: Story = {
+    args: {
+        children: "Input Label",
+        variant: "primary",
+        type: "OTP",
+        OTPLength: 6,
+        id: "input",
+        onComplete: (value) => console.log(value)
     }
 }

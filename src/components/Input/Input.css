@@ -29,6 +29,12 @@
     align-items: center;
 }
 
+.input-wrapper-otp {
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
 .input {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -182,4 +188,10 @@
     padding: 0;
     border-width: 5px;
     border-radius: 2px;
+}
+
+.input-otp {
+    text-align: center;
+    width: 2rem;
+    padding: .5rem .25rem;
 }

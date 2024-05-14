@@ -1,19 +1,24 @@
-import { InputHTMLAttributes, ReactNode, useState } from "react";
+import { InputHTMLAttributes, ReactNode, useRef, useState } from "react";
 import "./Input.css";
 import "../index.css";
 import classNames from "classnames";
 import Button from "../Button";
 import Join from "../Join";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
     children?: ReactNode;
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
     id: string;
     labelClassName?: string;
+    type?: "OTP" | InputHTMLAttributes<HTMLInputElement>["type"];
+    OTPLength?: number;
+    onComplete?: (otpValue: string) => void;
 }
 
-const Input = ({ children, id, name, variant, className, labelClassName, type, ...props }: InputProps) => {
+const Input = ({ children, id, name, variant, className, labelClassName, type, OTPLength = 6, onComplete, ...props }: InputProps) => {
     const [inputValue, setInputValue] = useState("");
+    const [OTP, setOTP] = useState<string[]>(Array(OTPLength).fill(''));
+    const otpRef = useRef<HTMLInputElement[]>(Array(OTPLength).fill(null));
 
     function handleClick() {
         document.getElementById(id)?.click();
@@ -26,6 +31,25 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, .
             props.onChange(event);
         }
     }
+
+
+    const handleTextChange = (input: string, index: number) => {
+        const newPin = [...OTP];
+        newPin[index] = input;
+        setOTP(newPin);
+
+        if (input.length === 1 && index < OTPLength - 1) {
+            otpRef.current[index + 1]?.focus();
+        }
+
+        if (input.length === 0 && index > 0) {
+            otpRef.current[index - 1]?.focus();
+        }
+
+        if (newPin.every((digit) => digit !== '') && onComplete) {
+            onComplete(newPin.join(''));
+        }
+    };
 
     if (type == "file") {
         return (
@@ -82,6 +106,32 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, .
         console.error("Use Input type file for images!");
         return (
             <div style={{ color: "var(--secondary)" }}>Use Input type "file" for images!</div>
+        )
+    }
+    if (type == "OTP") {
+        return (
+            <div className={classNames("input-wrapper", `input-wrapper-${variant}`, className)}>
+                {children &&
+                    <label htmlFor={id} className={classNames("label", labelClassName)}>{children}</label>
+                }
+                <div className="input-wrapper input-wrapper-otp">
+                    {Array.from({ length: OTPLength || 3 }).map((_, index) =>
+                        <input
+                            key={index}
+                            id={id + index}
+                            maxLength={1}
+                            value={OTP[index]}
+                            onChange={(e) => {
+                                handleTextChange(e.target.value, index);
+                                if (props.onChange) props.onChange(e);
+                            }}
+                            ref={(ref) => (otpRef.current[index] = ref as HTMLInputElement)}
+                            type="text"
+                            className={classNames("input", `input-${variant}`, "input-otp", className)}
+                            {...props} />
+                    )}
+                </div>
+            </div>
         )
     }
     return (
