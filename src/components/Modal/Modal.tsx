@@ -14,16 +14,17 @@ export interface ModalProps extends DialogHTMLAttributes<HTMLDialogElement> {
     modalImage?: ReactNode;
     danger?: Boolean;
     modalDraggable?: Boolean;
+    modalCloseButton?: Boolean;
 }
 
-const Drag = ({modalDraggable, children}: {modalDraggable?: Boolean, children: ReactNode}) => {
+const Drag = ({ modalDraggable, children }: { modalDraggable?: Boolean, children: ReactNode }) => {
     if (modalDraggable) {
         return <Draggable handle=".cui-modal-draggable">{children}</Draggable>
     }
     return <>{children}</>
 }
 
-const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions, children, variant, danger, modalDraggable, ...props }: ModalProps) => {
+const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions, children, variant, danger, modalDraggable, modalCloseButton = true, ...props }: ModalProps) => {
     return (
         <Drag modalDraggable={modalDraggable}>
             <dialog
@@ -43,7 +44,9 @@ const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions,
                         {modalTitle && (
                             <h3 className="cui-modal-title">{modalTitle}</h3>
                         )}
-                        <button onClick={() => setOpen(false)} className={"cui-modal-close"} type="button"></button>
+                        {modalCloseButton && (
+                            <button onClick={() => setOpen(false)} className={"cui-modal-close"} type="button"></button>
+                        )}
                     </div>
                     <div className="cui-modal-body">
                         {children}

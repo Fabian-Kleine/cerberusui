@@ -41,6 +41,18 @@ export const ModalWithoutTitle: Story = {
     }
 }
 
+export const ModalWithoutCloseButton: Story = {
+    args: {
+        open: true,
+        setOpen: () => {},
+        modalTitle: "Modal Title",
+        children: <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>,
+        variant: "primary",
+        style: {fontFamily: "sans-serif"},
+        modalCloseButton: false
+    }
+}
+
 export const ModalWithAction: Story = {
     args: {
         open: true,
