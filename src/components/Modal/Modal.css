@@ -18,7 +18,7 @@
     transform: scale(100%);
     user-select: none;
     -webkit-user-drag: none;
-    position: fixed;
+    position: absolute;
     top: 50vh;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .cui-modal-draggable {
-    position: relative;
+    position: absolute;
     background-color: #ffffff3d;
     top: 0;
     left: 0;
