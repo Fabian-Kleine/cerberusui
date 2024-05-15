@@ -7,6 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
     asChild?: Boolean;
     loading?: Boolean;
+    square?: Boolean;
 }
 
 function Slot({ children, ...props }
@@ -29,15 +30,15 @@ function Slot({ children, ...props }
     return null;
 }
 
-const Button = ({ variant, asChild, loading, ...props }: ButtonProps) => {
+const Button = ({ variant, asChild, loading, square, ...props }: ButtonProps) => {
     if (loading) {
         props.disabled = true;
     }
     if (asChild) {
-        props.className = classNames("cui-btn", `cui-btn-${variant}`, props?.className, props?.disabled && "cui-btn-disabled", loading && "cui-btn-loading");
+        props.className = classNames("cui-btn", `cui-btn-${variant}`, props?.className, props?.disabled && "cui-btn-disabled", loading && "cui-btn-loading", square && "cui-btn-square");
         return <Slot {...props} />
     }
-    return <button {...props} className={classNames("cui-btn", `cui-btn-${variant}`, props?.className, loading && "cui-btn-loading")}>{props?.children}</button>
+    return <button {...props} className={classNames("cui-btn", `cui-btn-${variant}`, props?.className, loading && "cui-btn-loading", square && "cui-btn-square")}>{props?.children}</button>
 }
 
 export default Button;

@@ -46,3 +46,7 @@ export const ExtraClassNames: Story = {
 export const Loading: Story = {
     args: {variant: 'warning', children: 'Click Me', loading: true}
 }
+
+export const SquareButton: Story = {
+    args: {variant: 'primary', children: 'C', square: true}
+}
