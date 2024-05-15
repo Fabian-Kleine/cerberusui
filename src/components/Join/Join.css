@@ -5,24 +5,27 @@
     border-radius: 5px;
 }
 
-.cui-join *:first-child:not(:last-child) {
+.cui-join *:first-child:not(:last-child), .cui-join *:first-child:not(:last-child) * {
     border-start-end-radius: 0;
     border-end-end-radius: 0;
 }
 
-.cui-join :where(*:last-child:not(:first-child)), .cui-join :where(*:last-child:not(:first-child)) * {
+.cui-join :where(*:last-child:not(:first-child)), 
+.cui-join :where(*:last-child:not(:first-child)) *, 
+.cui-join :where(*:last-child:not(:first-child)) * *
+{
     border-start-end-radius: inherit;
     border-end-end-radius: inherit;
 }
 
-.cui-join *:not(:first-child):not(:last-child) {
+.cui-join *:not(:first-child):not(:last-child), .cui-join *:not(:first-child):not(:last-child) * {
     border-start-end-radius: 0;
     border-end-end-radius: 0;
     border-end-start-radius: 0;
     border-start-start-radius: 0;
 }
 
-.cui-join *:last-child:not(:first-child) {
+.cui-join *:last-child:not(:first-child), .cui-join *:last-child:not(:first-child) * {
     border-start-start-radius: 0;
     border-end-start-radius: 0;
 }

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Join from "./Join";
 import Button from "../Button";
+import Input from "../Input";
 
 const meta = {
     title: "cerberusui/Join",
@@ -18,6 +19,15 @@ export const JoinedButtons: Story = {
             <Button variant="primary">Joined Button</Button>
             <Button variant="default">Joined Button</Button>
             <div style={{background: "red", padding: "12px", fontFamily: "sans-serif"}}>Joinded Div</div>
+        </>
+    }
+}
+
+export const JoinedInputAndButton: Story = {
+    args: {
+        children: <>
+            <Input id="input" variant="primary" />
+            <Button variant="primary">Joined Button</Button>
         </>
     }
 }
