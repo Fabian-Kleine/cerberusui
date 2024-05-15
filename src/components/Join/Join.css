@@ -5,6 +5,10 @@
     border-radius: 5px;
 }
 
+.cui-join *, .cui-join * * {
+    height: 3rem;
+}
+
 .cui-join *:first-child:not(:last-child), .cui-join *:first-child:not(:last-child) * {
     border-start-end-radius: 0;
     border-end-end-radius: 0;
