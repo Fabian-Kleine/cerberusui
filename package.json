@@ -1,6 +1,6 @@
 {
   "name": "cerberusui",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "description": "A UI Library for when you have to create a doomsday app in Javascript",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,6 +11,7 @@
   "repository": {
     "url": "https://github.com/Fabian-Kleine/cerberusui"
   },
+  "homepage": "https://cerberusui.fabian-kleine.dev/",
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
