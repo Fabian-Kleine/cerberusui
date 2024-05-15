@@ -1,6 +1,6 @@
 .cui-btn {
     color: var(--cui-default);
-    background-color: var(--base);
+    background-color: var(--cui-base);
     outline: none;
     padding: 12px 24px;
     font-size: 1em;
