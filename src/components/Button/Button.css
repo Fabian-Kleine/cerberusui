@@ -11,6 +11,9 @@
     text-decoration: none;
     transition: background-color .2s ease-in-out, border-color .2s ease-in-out, color .2s ease-in-out;
     border: var(--cui-default) 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cui-btn:hover {
