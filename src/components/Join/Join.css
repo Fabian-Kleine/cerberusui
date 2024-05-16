@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .cui-join *, .cui-join * *:not(> svg):not(> img) {
