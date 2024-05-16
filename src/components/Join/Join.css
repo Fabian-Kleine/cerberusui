@@ -8,6 +8,7 @@
 
 .cui-join *, .cui-join * *:not(> svg):not(> img) {
     height: 3rem;
+    box-sizing: border-box;
 }
 
 .cui-join *:first-child:not(:last-child), .cui-join *:first-child:not(:last-child) * {
