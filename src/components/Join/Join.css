@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.cui-join *, .cui-join * *:not(svg):not(img) {
+.cui-join *:not(svg):not(img):not(rect):not(path)  {
     height: 3rem;
     box-sizing: border-box;
 }
