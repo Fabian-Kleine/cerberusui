@@ -5,7 +5,7 @@
     border-radius: 5px;
 }
 
-.cui-join *, .cui-join * * {
+.cui-join *, .cui-join *:not(> svg):not(> img) *:not(> svg):not(> img) {
     height: 3rem;
 }
 
