@@ -18,7 +18,7 @@ export const JoinedButtons: Story = {
         children: <>
             <Button variant="primary">Joined Button</Button>
             <Button variant="default">Joined Button</Button>
-            <div style={{background: "red", padding: "12px", fontFamily: "sans-serif"}}>Joinded Div</div>
+            <div style={{background: "red", display: "flex", alignItems: "center", fontFamily: "sans-serif", padding: "0 2rem"}}>Joinded Div</div>
         </>
     }
 }
