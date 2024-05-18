@@ -109,6 +109,7 @@
     background-size: 5760px 100%;
     animation: cui-btn-loading-animation infinite 180s linear;
     color: #fff !important;
+    cursor: wait !important;
 }
 
 @media (prefers-reduced-motion: reduce){
