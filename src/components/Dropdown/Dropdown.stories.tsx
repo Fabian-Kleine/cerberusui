@@ -24,7 +24,7 @@ export const DropdownTest: Story = {
     }
 }
 
-export const DropdownIemAsChildTest: Story = {
+export const DropdownItemAsChildTest: Story = {
     args: {
         children: <>
             <DropdownItem asChild><a href="#">Item 1</a></DropdownItem>
@@ -34,5 +34,20 @@ export const DropdownIemAsChildTest: Story = {
         </>,
         variant: "primary",
         label: "Open/Close Dropdown"
+    }
+}
+
+export const DropdownDefaultOpen: Story = {
+    args: {
+        children: <>
+            <DropdownItem>Item 1</DropdownItem>
+            <DropdownItem>Item 2</DropdownItem>
+            <DropdownItem>Item 3</DropdownItem>
+            <DropdownItem>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, fugiat.</DropdownItem>
+        </>,
+        variant: "primary",
+        label: "Open/Close Dropdown",
+        defaultOpen: true,
+        closeOnOutsideClick: false
     }
 }
