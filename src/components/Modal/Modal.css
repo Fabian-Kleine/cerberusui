@@ -20,6 +20,7 @@
     -webkit-user-drag: none;
     position: fixed;
     top: 50vh;
+    z-index: 99999;
 }
 
 .cui-modal:has(.cui-modal-draggable) {
