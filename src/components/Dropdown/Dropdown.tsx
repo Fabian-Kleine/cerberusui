@@ -8,13 +8,15 @@ import OutsideAlerter from "../../utils/OutsideAlerter";
 export interface DropdownProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
     label: string;
+    closeOnOutsideClick?: Boolean;
+    defaultOpen?: Boolean;
 }
 
-const Dropdown = ({ children, variant, label, ...props }: DropdownProps) => {
-    const [open, setOpen] = useState(false);
+const Dropdown = ({ children, variant, label, closeOnOutsideClick = true, defaultOpen = false, ...props }: DropdownProps) => {
+    const [open, setOpen] = useState(defaultOpen);
 
     return (
-        <OutsideAlerter action={() => setOpen(false)} className={"cui-dropdown"}>
+        <OutsideAlerter action={() => closeOnOutsideClick ? setOpen(false) : null} className={"cui-dropdown"}>
             <Button onClick={() => setOpen(!open)} variant={variant}>{label}</Button>
             <ul className={classNames("cui-dropdown-content", `cui-dropdown-content-${variant}`, open && "cui-dropdown-content-open", props.className)}>
                 {children}
