@@ -1,6 +1,7 @@
-import { ButtonHTMLAttributes, Children, ReactNode, cloneElement, isValidElement, HTMLAttributes } from "react"
+import { ButtonHTMLAttributes } from "react"
 import "./Button.css"
 import "../index.css"
+import Slot from "../../utils/Slot";
 import classNames from "classnames";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -8,26 +9,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     asChild?: Boolean;
     loading?: Boolean;
     square?: Boolean;
-}
-
-function Slot({ children, ...props }
-    : HTMLAttributes<HTMLElement> & {
-        children?: ReactNode
-    }) {
-
-    if (isValidElement(children)) {
-        return cloneElement(children, {
-            ...props,
-            ...children.props,
-            className: `${props.className || ''} ${children.props.className || ''}`.trim(),
-        })
-    }
-
-    if (Children.count(children) > 1) {
-        Children.only(null);
-    }
-
-    return null;
 }
 
 const Button = ({ variant, asChild, loading, square, ...props }: ButtonProps) => {
