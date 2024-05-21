@@ -27,6 +27,7 @@
 .cui-input-wrapper-row {
     flex-direction: row-reverse;
     align-items: center;
+    gap: 10px;
 }
 
 .cui-input-wrapper-otp {
