@@ -4,6 +4,7 @@
 
 .cui-dropdown {
     position: relative;
+    width: fit-content;
 }
 
 .cui-dropdown-content {
