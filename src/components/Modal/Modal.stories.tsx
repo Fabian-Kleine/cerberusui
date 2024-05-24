@@ -149,3 +149,14 @@ export const DraggableModal: Story = {
         modalDraggable: true
     }
 }
+
+export const ModalClickOutsideClose: Story = {
+    args: {
+        open: true,
+        setOpen: () => {console.log("close")},
+        children: <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>,
+        variant: "primary",
+        style: {fontFamily: "sans-serif"},
+        outsideClickClose: true
+    }
+}
