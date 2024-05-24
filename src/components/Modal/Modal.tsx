@@ -4,6 +4,7 @@ import "../index.css"
 import Button from "../Button";
 import classNames from "classnames";
 import Draggable from "react-draggable";
+import OutsideAlerter from "../../utils/OutsideAlerter";
 import { ButtonProps } from "../Button/Button";
 
 export interface ModalProps extends DialogHTMLAttributes<HTMLDialogElement> {
@@ -15,6 +16,7 @@ export interface ModalProps extends DialogHTMLAttributes<HTMLDialogElement> {
     danger?: Boolean;
     modalDraggable?: Boolean;
     modalCloseButton?: Boolean;
+    outsideClickClose?: Boolean;
 }
 
 const Drag = ({ modalDraggable, children }: { modalDraggable?: Boolean, children: ReactNode }) => {
@@ -24,43 +26,45 @@ const Drag = ({ modalDraggable, children }: { modalDraggable?: Boolean, children
     return <>{children}</>
 }
 
-const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions, children, variant, danger, modalDraggable, modalCloseButton = true, ...props }: ModalProps) => {
+const Modal = ({ className, open, setOpen, modalTitle, modalImage, modalActions, children, variant, danger, modalDraggable, modalCloseButton = true, outsideClickClose, ...props }: ModalProps) => {
     return (
-        <Drag modalDraggable={modalDraggable}>
-            <dialog
-                {...props}
-                open={open}
-                className={classNames("cui-modal", `cui-modal-${variant}`, danger && "cui-modal-danger", !open && "cui-closed", className)}>
-                {modalDraggable &&
-                    <div className="cui-modal-draggable"></div>
-                }
-                {modalImage &&
-                    <div className="cui-modal-image">
-                        {modalImage}
-                    </div>
-                }
-                <div className="cui-modal-container">
-                    <div className={classNames("cui-modal-header", !modalTitle && "cui-modal-header-end")}>
-                        {modalTitle && (
-                            <h3 className="cui-modal-title">{modalTitle}</h3>
-                        )}
-                        {modalCloseButton && (
-                            <button onClick={() => setOpen(false)} className={"cui-modal-close"} type="button"></button>
-                        )}
-                    </div>
-                    <div className="cui-modal-body">
-                        {children}
-                    </div>
-                    {modalActions && (
-                        <div className="cui-modal-actions">
-                            {modalActions.map((action, index) =>
-                                <Button onClick={() => action.action()} key={index} variant={action.actionVariant}>{action.actionTitle}</Button>
+        <OutsideAlerter action={() => outsideClickClose ? setOpen(false) : null}>
+            <Drag modalDraggable={modalDraggable}>
+                <dialog
+                    {...props}
+                    open={open}
+                    className={classNames("cui-modal", `cui-modal-${variant}`, danger && "cui-modal-danger", !open && "cui-closed", className)}>
+                    {modalDraggable &&
+                        <div className="cui-modal-draggable"></div>
+                    }
+                    {modalImage &&
+                        <div className="cui-modal-image">
+                            {modalImage}
+                        </div>
+                    }
+                    <div className="cui-modal-container">
+                        <div className={classNames("cui-modal-header", !modalTitle && "cui-modal-header-end")}>
+                            {modalTitle && (
+                                <h3 className="cui-modal-title">{modalTitle}</h3>
+                            )}
+                            {modalCloseButton && (
+                                <button onClick={() => setOpen(false)} className={"cui-modal-close"} type="button"></button>
                             )}
                         </div>
-                    )}
-                </div>
-            </dialog>
-        </Drag>
+                        <div className="cui-modal-body">
+                            {children}
+                        </div>
+                        {modalActions && (
+                            <div className="cui-modal-actions">
+                                {modalActions.map((action, index) =>
+                                    <Button onClick={() => action.action()} key={index} variant={action.actionVariant}>{action.actionTitle}</Button>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </dialog>
+            </Drag>
+        </OutsideAlerter>
     )
 }
 
