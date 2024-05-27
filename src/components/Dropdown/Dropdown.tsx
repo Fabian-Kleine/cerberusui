@@ -1,4 +1,4 @@
-import { useState, DetailedHTMLProps, HTMLAttributes, LiHTMLAttributes } from "react"
+import { useState, DetailedHTMLProps, HTMLAttributes, LiHTMLAttributes, ReactNode } from "react"
 import "./Dropdown.css"
 import Button from "../Button"
 import classNames from "classnames";
@@ -7,7 +7,7 @@ import OutsideAlerter from "../../utils/OutsideAlerter";
 
 export interface DropdownProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
-    label: string;
+    label: string | ReactNode;
     closeOnOutsideClick?: Boolean;
     defaultOpen?: Boolean;
 }
