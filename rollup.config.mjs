@@ -5,6 +5,8 @@ import dts from 'rollup-plugin-dts';
 import postcss from "rollup-plugin-postcss";
 import del from 'rollup-plugin-delete';
 import external from 'rollup-plugin-peer-deps-external';
+import autoExternal from 'rollup-plugin-auto-external';
+import path from "path";
 import packageJson from './package.json' assert { type: 'json' };
 
 export default [
@@ -24,6 +26,12 @@ export default [
     ],
     plugins: [
       external(),
+      autoExternal({
+        builtins: false,
+        dependencies: true,
+        peerDependencies: false,
+        packagePath: path.resolve("./package.json")
+      }),
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),

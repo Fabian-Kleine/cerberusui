@@ -1,6 +1,6 @@
 {
   "name": "cerberusui",
-  "version": "0.5.7",
+  "version": "0.5.9",
   "description": "A UI Library for when you have to create a doomsday app in Javascript",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -39,6 +39,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup": "^4.17.1",
+    "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
