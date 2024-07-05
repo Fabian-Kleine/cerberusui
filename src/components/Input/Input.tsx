@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode, useRef, useState } from "react";
+import { InputHTMLAttributes, ClipboardEvent, ReactNode, useRef, useState } from "react";
 import "./Input.css";
 import "../index.css";
 import classNames from "classnames";
@@ -47,7 +47,16 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
         if (newPin.every((digit) => digit !== '') && onComplete) {
             onComplete(newPin.join(''));
         }
-    };
+    }
+
+    const handleOTPPaste = (event: ClipboardEvent<HTMLInputElement>) => {
+        event.preventDefault();
+        const pastedString = event.clipboardData.getData('Text');
+        const pastedArray = pastedString.split('');
+        setOTP(pastedArray);
+        if (onComplete) onComplete(pastedString);
+        if (props.onPaste) props.onPaste(event);
+    }
 
     if (type == "file") {
         return (
@@ -123,6 +132,7 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
                                 handleTextChange(e.target.value, index);
                                 if (props.onChange) props.onChange(e);
                             }}
+                            onPaste={handleOTPPaste}
                             ref={(ref) => (otpRef.current[index] = ref as HTMLInputElement)}
                             type="text"
                             className={classNames("cui-input", `cui-input-${variant}`, "cui-input-otp", className)}
