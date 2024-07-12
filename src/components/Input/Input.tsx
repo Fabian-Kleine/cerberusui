@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ClipboardEvent, ReactNode, useRef, useState } from "react";
+import { InputHTMLAttributes, ClipboardEvent, ChangeEvent, ReactNode, useRef, useState } from "react";
 import "./Input.css";
 import "../index.css";
 import classNames from "classnames";
@@ -24,8 +24,9 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
         document.getElementById(id)?.click();
     }
 
-    function handleFileChange(event: any) {
-        const val = event?.target.files[0].name;
+    function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
+        const val = event.target.files?.[0]?.name;
+        if (!val) return;
         setInputValue(val);
         if (props.onChange) props.onChange(event);
     }
