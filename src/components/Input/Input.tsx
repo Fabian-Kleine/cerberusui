@@ -53,8 +53,11 @@ const Input = ({ children, id, name, variant, className, labelClassName, type, O
         event.preventDefault();
         const pastedString = event.clipboardData.getData('Text');
         const pastedArray = pastedString.split('');
-        setOTP(pastedArray);
-        if (onComplete) onComplete(pastedString);
+        const newPin = [...OTP];
+        newPin.forEach((_, index) => newPin[index] = pastedArray[index] || "");
+        setOTP(newPin);
+        otpRef.current.forEach(inputElement => inputElement.blur());
+        if (onComplete && pastedArray.length >= OTPLength) onComplete(pastedString);
         if (props.onPaste) props.onPaste(event);
     }
 
