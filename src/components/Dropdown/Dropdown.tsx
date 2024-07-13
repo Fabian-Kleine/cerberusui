@@ -8,8 +8,8 @@ import OutsideAlerter from "../../utils/OutsideAlerter";
 export interface DropdownProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
     label: string | ReactNode;
-    closeOnOutsideClick?: Boolean;
-    defaultOpen?: Boolean;
+    closeOnOutsideClick?: boolean;
+    defaultOpen?: boolean;
 }
 
 const Dropdown = ({ children, variant, label, closeOnOutsideClick = true, defaultOpen = false, ...props }: DropdownProps) => {
@@ -26,7 +26,7 @@ const Dropdown = ({ children, variant, label, closeOnOutsideClick = true, defaul
 }
 
 export interface DropdownItemProps extends LiHTMLAttributes<HTMLLIElement> {
-    asChild?: Boolean;
+    asChild?: boolean;
 }
 
 export const DropdownItem = ({ children, className, asChild, ...props }: DropdownItemProps) => {

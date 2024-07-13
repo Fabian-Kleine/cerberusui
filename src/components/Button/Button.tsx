@@ -6,9 +6,9 @@ import classNames from "classnames";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
-    asChild?: Boolean;
-    loading?: Boolean;
-    square?: Boolean;
+    asChild?: boolean;
+    loading?: boolean;
+    square?: boolean;
 }
 
 const Button = ({ variant, asChild, loading, square, ...props }: ButtonProps) => {

@@ -13,13 +13,13 @@ export interface ModalProps extends DialogHTMLAttributes<HTMLDialogElement> {
     modalActions?: { actionTitle: string, action: Function, actionVariant: ButtonProps["variant"] }[];
     variant: "primary" | "secondary" | "tertiary" | "default" | "warning";
     modalImage?: ReactNode;
-    danger?: Boolean;
-    modalDraggable?: Boolean;
-    modalCloseButton?: Boolean;
-    outsideClickClose?: Boolean;
+    danger?: boolean;
+    modalDraggable?: boolean;
+    modalCloseButton?: boolean;
+    outsideClickClose?: boolean;
 }
 
-const Drag = ({ modalDraggable, children }: { modalDraggable?: Boolean, children: ReactNode }) => {
+const Drag = ({ modalDraggable, children }: { modalDraggable?: boolean, children: ReactNode }) => {
     if (modalDraggable) {
         return <Draggable handle=".cui-modal-draggable">{children}</Draggable>
     }
